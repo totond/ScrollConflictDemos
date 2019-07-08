@@ -18,6 +18,7 @@ class SubFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         var root = inflater.inflate(R.layout.fragment_sub, null, false)
         fragmentList.add(WidgetFragment())
+        fragmentList.add(WidgetPagerFragment())
         fragmentList.add(WidgetFragment())
         val adapter = MyFragmentAdapter(fragmentList, childFragmentManager)
         val vp = root.findViewById<MyViewPager>(R.id.vp)

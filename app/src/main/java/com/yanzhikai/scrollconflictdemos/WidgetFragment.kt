@@ -8,7 +8,7 @@ import android.view.ViewGroup
 
 class WidgetFragment: Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val root = inflater.inflate(R.layout.fragment_widget, container)
+        val root = inflater.inflate(R.layout.fragment_widget, container, false)
         return root
     }
 }
