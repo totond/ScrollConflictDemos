@@ -15,7 +15,7 @@ class WidgetPagerFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val root = inflater.inflate(R.layout.fragment_widget_pager, container, false)
         val adapter = MyAdapter(context!!)
-        val vp_widget = root.findViewById<MyViewPager>(R.id.vp_widget)
+        val vp_widget = root.findViewById<MySubViewPager>(R.id.vp_widget)
         vp_widget.adapter = adapter
         return root
     }

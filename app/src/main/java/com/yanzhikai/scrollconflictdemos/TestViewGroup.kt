@@ -8,8 +8,10 @@ import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
+import android.widget.FrameLayout
 
-class WidgetView : View {
+class TestViewGroup : FrameLayout {
+
     constructor(context: Context) : super(context)
 
     constructor(context: Context, attrs: AttributeSet) : super(context, attrs)
@@ -17,7 +19,7 @@ class WidgetView : View {
     var i : Int = 0
 
     override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
-        Log.i("jkyWidgetView", "dispatchTouchEvent: " + ev?.action)
+        Log.i("jkyTestViewGroup", "dispatchTouchEvent: " + ev?.action)
         if (ev?.action == MotionEvent.ACTION_DOWN) {
             i = 0
         }
@@ -30,7 +32,7 @@ class WidgetView : View {
 //    }
 
     override fun onTouchEvent(ev: MotionEvent?): Boolean {
-        Log.i("jkyWidgetView", "onTouchEvent：" + i++)
+        Log.i("jkyTestViewGroup", "onTouchEvent：" + i++)
         return true
     }
 }

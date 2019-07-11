@@ -6,7 +6,7 @@ import android.util.AttributeSet
 import android.util.Log
 import android.view.MotionEvent
 
-class MyViewPager: ViewPager {
+class MySubViewPager : ViewPager {
     constructor(context: Context) : super(context)
 
     constructor(context: Context, attrs: AttributeSet) : super(context, attrs)
@@ -15,12 +15,12 @@ class MyViewPager: ViewPager {
     var lastY:Float = 0f
 
     override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
-        Log.i("jkyMyViewPager", "dispatchTouchEvent: " + ev?.action)
+        Log.i("jkySubViewPager", "dispatchTouchEvent: " + ev?.action)
         return super.dispatchTouchEvent(ev)
     }
 
     override fun onInterceptTouchEvent(ev: MotionEvent?): Boolean {
-        Log.i("jkyMyViewPager", "onInterceptTouchEvent: " + ev?.action)
+        Log.i("jkySubViewPager", "onInterceptTouchEvent: " + ev?.action)
 
         when (ev?.action) {
             MotionEvent.ACTION_DOWN->{
@@ -30,10 +30,10 @@ class MyViewPager: ViewPager {
             MotionEvent.ACTION_MOVE->{
 
                 if (ev.x - lastX > 10) {
-                    Log.i("jkyMyViewPager", "onInterceptTouchEvent: 1" )
+                    Log.i("jkySubViewPager", "onInterceptTouchEvent: 1" )
                     return true
                 }else if (ev.x - lastX > 200) {
-                    Log.i("jkyMyViewPager", "onInterceptTouchEvent: 2" )
+                    Log.i("jkySubViewPager", "onInterceptTouchEvent: 2" )
                     return false
                 }
             }
@@ -45,5 +45,4 @@ class MyViewPager: ViewPager {
         Log.i("jkySubViewPager", "onTouchEvent：" + ev?.action)
         return super.onTouchEvent(ev)
     }
-
 }
